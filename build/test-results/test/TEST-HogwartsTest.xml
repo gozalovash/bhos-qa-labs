@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="HogwartsTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-10-12T16:27:08" hostname="DESKTOP-101HF4J" time="0.029">
+  <properties/>
+  <testcase name="testMain()" classname="HogwartsTest" time="0.029"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
