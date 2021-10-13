@@ -3,7 +3,7 @@ enum PermissionLevel{
     DEVELOPER,
     USER
 }
-
+// hi
 public class PermissionManager {
     private PermissionLevel mCurrentLevel = PermissionLevel.USER;
 
