@@ -1,17 +1,25 @@
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class PermissionManagerTest extends PermissionManager {
+    PermissionManager pManager;
 
-    @Test
-    void testGetPermissionLevel() {
-        assertTrue(true);
+    @BeforeEach
+    void setUp(){
+        pManager = new PermissionManager();
     }
 
     @Test
-    void testMain() {
-        assertTrue(true);
+    void testGetPermissionLevel() {
+        assertEquals("User", pManager.getPermissionLevel());
+    }
+
+    @Test
+    void testSetPermissionLevel() {
+        pManager.setPermissionLevel(PermissionLevel.DEVELOPER);
+        assertEquals("Developer", pManager.getPermissionLevel());
     }
 
 }

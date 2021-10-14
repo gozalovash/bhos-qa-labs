@@ -7,28 +7,28 @@ enum PermissionLevel{
 public class PermissionManager {
     private PermissionLevel mCurrentLevel = PermissionLevel.USER;
 
-    public String getPermissionLevel(PermissionLevel pLevel){
-        if (pLevel == PermissionLevel.ADMIN){
+    public String getPermissionLevel(){
+        if (mCurrentLevel == PermissionLevel.ADMIN){
             return "Admin";
         }
-        if (pLevel == PermissionLevel.DEVELOPER){
+        if (mCurrentLevel == PermissionLevel.DEVELOPER){
             return "Developer";
         }
-        if (pLevel == PermissionLevel.USER){
+        if (mCurrentLevel == PermissionLevel.USER){
             return "User";
         }
         return "EMPTY";
     }
 
-    private void setPermissionLevel(PermissionLevel pLevel){
+    public void setPermissionLevel(PermissionLevel pLevel){
         mCurrentLevel = pLevel;
     }
 
     public static void main(String[] args) {
         PermissionManager pmanager = new PermissionManager();
-        System.out.println(pmanager.getPermissionLevel(pmanager.mCurrentLevel));
+        System.out.println(pmanager.getPermissionLevel());
         pmanager.setPermissionLevel(PermissionLevel.ADMIN);
-        System.out.println(pmanager.getPermissionLevel(pmanager.mCurrentLevel));
+        System.out.println(pmanager.getPermissionLevel());
     }
 
 
