@@ -8,16 +8,17 @@ public class PermissionManager {
     private PermissionLevel mCurrentLevel = PermissionLevel.USER;
 
     public String getPermissionLevel(){
+        String clevel = "";
         if (mCurrentLevel == PermissionLevel.ADMIN){
-            return "Admin";
+            clevel = "Admin";
         }
         if (mCurrentLevel == PermissionLevel.DEVELOPER){
-            return "Developer";
+            clevel = "Developer";
         }
         if (mCurrentLevel == PermissionLevel.USER){
-            return "User";
+            clevel = "User";
         }
-        return "EMPTY";
+        return clevel;
     }
 
     public void setPermissionLevel(PermissionLevel pLevel){
