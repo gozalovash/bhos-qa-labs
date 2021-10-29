@@ -27,6 +27,7 @@ public class MockApiTest {
         String response = restTemplate.getForObject(ResourceUrl,String.class);
         assertThat(response).isNotNull();
     }
+
     @Test
     public void testRestTemplateCommits() throws Exception{
         RestTemplate restTemplate = new RestTemplate();
