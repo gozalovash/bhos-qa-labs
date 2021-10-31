@@ -22,8 +22,10 @@ jobs:
         java-version: '11'
         distribution: 'adopt'
         cache: gradle
+    - name: Decrypt the secret
+      run: ./.github/scripts/decrypt_secret.sh
       env:
-        GOOGLE_APPLICATION_CREDENTIALS : ${{secrets.GOOGLE_APPLICATION_CREDENTIALS}}
+        FIREBASE_FILE_KEY: ${{secrets.FIREBASE_FILE_KEY}}
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
     - name: Build with Gradle

@@ -21,10 +21,10 @@ public class FirestoreIntegrationTest {
 
     @Test
     public void AddToFirestore() throws Exception {
-//        FileInputStream serviceAccount =
-//                new FileInputStream(System.getenv("GOOGLE_APPLICATION_CREDENTIALS"));
+        FileInputStream serviceAccount =
+                new FileInputStream("spring-project-3-firebase-adminsdk-dang2-734dba00f4.json");
 
-        GoogleCredentials credentials = GoogleCredentials.getApplicationDefault();
+        GoogleCredentials credentials = GoogleCredentials.fromStream(serviceAccount);
         FirebaseOptions options = new FirebaseOptions.Builder()
                 .setCredentials(credentials)
                 .setProjectId("spring-project-3")
