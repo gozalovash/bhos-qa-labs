@@ -22,6 +22,8 @@ jobs:
         java-version: '11'
         distribution: 'adopt'
         cache: gradle
+      env:
+        GOOGLE_APPLICATION_CREDENTIALS : ${{secrets.GOOGLE_APPLICATION_CREDENTIALS}}
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
     - name: Build with Gradle

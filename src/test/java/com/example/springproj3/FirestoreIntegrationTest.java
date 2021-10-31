@@ -21,10 +21,10 @@ public class FirestoreIntegrationTest {
 
     @Test
     public void AddToFirestore() throws Exception {
-        FileInputStream serviceAccount =
-                    new FileInputStream(System.getenv("GOOGLE_APPLICATION_CREDENTIALS"));
+//        FileInputStream serviceAccount =
+//                new FileInputStream(System.getenv("GOOGLE_APPLICATION_CREDENTIALS"));
 
-        GoogleCredentials credentials = GoogleCredentials.fromStream(serviceAccount);
+        GoogleCredentials credentials = GoogleCredentials.getApplicationDefault();
         FirebaseOptions options = new FirebaseOptions.Builder()
                 .setCredentials(credentials)
                 .setProjectId("spring-project-3")
@@ -42,23 +42,11 @@ public class FirestoreIntegrationTest {
         ApiFuture<WriteResult> result = docRef.set(data);
 
         // result.get() blocks on response
-        if(result.get().toString().length()==0){
+        if (result.get().toString().length() == 0) {
             throw new Exception("Results are not printed!");
         }
         System.out.println("Update time : " + result.get().getUpdateTime());
 
-
-        //        try {
-//            FileInputStream serviceAccount =
-//                    new FileInputStream(System.getenv("GOOGLE_APPLICATION_CREDENTIALS"));
-//        } catch (Exception e){
-//            System.out.println("credential file not found");
-//        }
-//        FirebaseOptions options = new FirebaseOptions.Builder()
-//                .setCredentials(GoogleCredentials.fromStream(serviceAccount))
-//                .build();
-//
-//        FirebaseApp.initializeApp(options);
     }
 }
 
