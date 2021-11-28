@@ -24,6 +24,10 @@ jobs:
         cache: gradle
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
+    - name: Decrypt the secret
+      run: bash ./.github/scripts/decrypt_secret.sh
+      env:
+        FIREBASE_FILE_KEY: ${{secrets.FIREBASE_FILE_KEY2}}
     - name: Build with Gradle
       run: ./gradlew build
     - name: Test with Gradle
